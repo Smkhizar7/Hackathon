@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyA4hRAuyVLFqBvU3q_E1xYaRnpk9JeuUmA",
+            authDomain: "food-mart-b896b.firebaseapp.com",
+            projectId: "food-mart-b896b",
+            storageBucket: "food-mart-b896b.appspot.com",
+            messagingSenderId: "905016831884",
+            appId: "1:905016831884:web:34a4ebbfb59e142fccf0a9",
+            measurementId: "G-K7WXLJDGSX"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body onload="status('Accepted')">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./restaurant-panel.html"><i class="fas fa-utensils"></i> Food Mart</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./restaurant-panel.html">Dashboard<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./addItem.html">Add Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./products.html">Products</a>
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0 name">
+                <span id="uName"></span>
+                <a class="nav-link" onclick="logout()">Logout
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" id="link1" onclick="accepted()">Accepted</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="link2" onclick="pending()">Pending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="link3" onclick="rejected()">Rejected</a>
+            </li>
+        </ul>
+        <div id="Accepted" class="show">
+            <h1>Accepted</h1>
+        </div>
+        <div id="Pending" class="hidden">
+            <h1>Pending</h1>
+        </div>
+        <div id="Rejected" class="hidden">
+            <h1>Rejected</h1>
+        </div>
+    </div>
+    <script src="restaurant.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+
+</html>

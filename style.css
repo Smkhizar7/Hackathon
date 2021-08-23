@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body {
+    font-family: 'Lobster', cursive !important;
+    /* background: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+.name {
+    color: white;
+    font-size: 20px;
+}
+
+.name a {
+    color: red;
+}
+
+.name a:hover {
+    color: #ff0000cc;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.col-div {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.container-fluid.login {
+    display: flex;
+    padding: 20px;
+    min-height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rest_div {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #f0b37ad9;
+    box-shadow: 4px 4px 8px 4px;
+}
+
+.sign_div {
+    padding: 20px;
+    display: flex;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #f0b37ad9;
+    box-shadow: 4px 4px 8px 4px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.customer {
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    background: #f0b37ad9;
+    border-radius: 20px;
+    box-shadow: 4px 4px 15px 6px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+
+.content-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.heading {
+    padding: 10px;
+    border-radius: 20px;
+    background: #f0b37ad9;
+    box-shadow: 4px 4px 8px 6px;
+}
+
+.link-div {
+    padding: 10px;
+    border-radius: 20px;
+    background: #f0b37ad9;
+    box-shadow: 4px 4px 8px 6px;
+    margin: 20px;
+}
+
+.user-content-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 90vh;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.restaurant {
+    display: flex;
+    min-width: 200px;
+    min-height: 200px;
+    background: url(https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    flex-wrap: wrap;
+    align-content: center;
+    color: #ffffff;
+    justify-content: center;
+}
+
+h3 {
+    text-shadow: 4px 4px 1px black;
+    border-radius: 40px;
+    width: 80%;
+    text-align: center;
+    font-weight: 800;
+}
+
+img.card-img-top {
+    height: 250px;
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loading {
+    transform: translate(0px, 100px);
+    color: black;
+    text-shadow: none;
+}
+
+.additem_div {
+    padding: 20px;
+    margin: 10px 0px;
+    border-radius: 20px;
+    background-color: #0000008f;
+    box-shadow: 4px 4px 8px 4px;
+    color: #ffffff;
+}
+
+.container-fluid.main {
+    display: flex;
+    background: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.container-fluid.signup {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.login-content-div {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+
+.rest-card-div {
+    width: 15rem;
+    height: 10rem;
+    margin: 20px;
+    justify-content: center;
+    background-image: url('https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 4px 4px 10px 1px;
+    cursor: pointer;
+}
+
+h3.card-text.h3 {
+    color: white;
+    font-size: xxx-large;
+    text-align: center;
+    width: 100%;
+}
+
+div#cust-orders {
+    min-height: 90vh;
+    padding: 20px 0px;
+    background: gainsboro;
+    /* background-image: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.thead-dark th {
+    font-weight: 500;
+}
