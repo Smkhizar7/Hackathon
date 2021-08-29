@@ -28,80 +28,100 @@
 </head>
 
 <body>
-    <div class="container-fluid signup">
-        <div class="heading">
-            <h1>Sign Up Page</h1>
-        </div>
-        <div class="content-div col-10">
-            <div class="sign_div">
-                <h1>Restaurant Sign Up</h1>
-                <div class="hidden" role="alert" id="alert1">
-                </div>
-                <div class="form-group">
-                    <label for="rest-name">Restaurant Name</label>
-                    <input type="text" class="form-control" id="rest-name">
-                    <span class="error" id="res_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="rest-email">Email address</label>
-                    <input type="email" class="form-control" id="rest-email" aria-describedby="emailHelp">
-                    <span class="error" id="e_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="rest-password">Password</label>
-                    <input type="password" class="form-control" id="rest-password">
-                    <span class="error" id="p_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="rest-city">City</label>
-                    <input type="text" class="form-control" id="rest-city">
-                    <span class="error" id="city_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="rest-country">Country</label>
-                    <input type="text" class="form-control" id="rest-country">
-                    <span class="error" id="con_error"></span>
-                </div>
-                <button class="btn btn-primary" onclick="restSignUp()">Sign Up</button>
+    <div class="container-fluid body-div">
+        <div class="container-fluid signup">
+            <div class="heading">
+                <h1>Sign Up Page</h1>
             </div>
-            <div class="customer">
-                <h1>Customer Sign Up</h1>
-                <div class="hidden" role="alert" id="alert2">
+            <div class="content-div col-12">
+                <div class="sign_div">
+                    <h1>Restaurant Sign Up</h1>
+                    <div class="hidden" role="alert" id="alert1">
+                    </div>
+                    <div class="form-group">
+                        <label for="rest-name">Restaurant Name</label>
+                        <input type="text" class="form-control" id="rest-name">
+                        <span class="error" id="res_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="rest-email">Email address</label>
+                        <input type="email" class="form-control" id="rest-email" aria-describedby="emailHelp">
+                        <span class="error" id="e_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="rest-password">Password</label>
+                        <input type="password" class="form-control" id="rest-password">
+                        <span class="error" id="p_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="rest-city">City</label>
+                        <input type="text" class="form-control" id="rest-city">
+                        <span class="error" id="city_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="rest-country">Country</label>
+                        <input type="text" class="form-control" id="rest-country">
+                        <span class="error" id="con_error"></span>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" onclick="restSignUp()">Sign Up</button>
+                    </div>
+                    <br>
+                    <div>
+                        <p>
+                            If you have already an account
+                            <br> Click here to <a href="./index.html">Sign In</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="cust-name">Username</label>
-                    <input type="text" class="form-control" id="cust-name">
-                    <span class="error" id="name_error"></span>
+                <div class="customer">
+                    <h1>Customer Sign Up</h1>
+                    <div class="hidden" role="alert" id="alert2">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-name">Username</label>
+                        <input type="text" class="form-control" id="cust-name">
+                        <span class="error" id="name_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-email">Email address</label>
+                        <input type="email" class="form-control" id="cust-email" aria-describedby="emailHelp">
+                        <span class="error" id="cust_e_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-password">Password</label>
+                        <input type="password" class="form-control" id="cust-password">
+                        <span class="error" id="cust_p_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-phone">Phone</label>
+                        <input type="text" class="form-control" id="cust-phone">
+                        <span class="error" id="cust_phone_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-city">City</label>
+                        <input type="text" class="form-control" id="cust-city">
+                        <span class="error" id="cust_city_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-country">Country</label>
+                        <input type="text" class="form-control" id="cust-country">
+                        <span class="error" id="cust_con_error"></span>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" onclick="custSignUp()">Sign Up</button>
+                    </div>
+                    <br>
+                    <div>
+                        <p>
+                            If you have already an account
+                            <br> Click here to <a href="./index.html">Sign In</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="cust-email">Email address</label>
-                    <input type="email" class="form-control" id="cust-email" aria-describedby="emailHelp">
-                    <span class="error" id="cust_e_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="cust-password">Password</label>
-                    <input type="password" class="form-control" id="cust-password">
-                    <span class="error" id="cust_p_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="cust-phone">Phone</label>
-                    <input type="text" class="form-control" id="cust-phone">
-                    <span class="error" id="cust_phone_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="cust-city">City</label>
-                    <input type="text" class="form-control" id="cust-city">
-                    <span class="error" id="cust_city_error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="cust-country">Country</label>
-                    <input type="text" class="form-control" id="cust-country">
-                    <span class="error" id="cust_con_error"></span>
-                </div>
-                <button class="btn btn-primary" onclick="custSignUp()">Sign Up</button>
             </div>
-        </div>
 
+        </div>
     </div>
     <script src="./signup.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

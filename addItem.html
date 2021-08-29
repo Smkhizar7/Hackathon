@@ -28,75 +28,77 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="./restaurant-panel.html"><i class="fas fa-utensils"></i> Food Mart</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="./restaurant-panel.html">Dashboard<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./addItem.html">Add Item</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./products.html">Products</a>
-                </li>
-            </ul>
-            <div class="form-inline my-2 my-lg-0 name">
-                <span id="uName"></span>
-                <a class="nav-link" href="./index.html" onclick="logout()">Logout
-                    <i class="fas fa-sign-out-alt"></i>
-                </a>
+    <div class="container-fluid body-div">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="./restaurant-panel.html"><i class="fas fa-utensils"></i> Food Mart</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./restaurant-panel.html"><i class="fas fa-chart-pie"></i> &nbsp; Dashboard<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./addItem.html"><i class="fas fa-plus-circle"></i> &nbsp; Add Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./products.html"><i class="fas fa-suitcase-rolling"></i> &nbsp; Products</a>
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0 name">
+                    <span id="uName"></span>
+                    <a class="nav-link" onclick="signOut()">Logout
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="container-fluid main">
-        <div class="additem_div col-10">
-            <h1 style="text-align: center;">Add Item</h1>
-            <div class="hidden" role="alert" id="alert3">
-            </div>
-            <div class="form-group">
-                <label for="item-name">Item Name</label>
-                <input type="text" class="form-control" id="item-name" aria-describedby="emailHelp">
-                <span class="error" id="i_n_error"></span>
-            </div>
-            <div class="form-group">
-                <label for="item-price">Item Price</label>
-                <input type="text" class="form-control" id="item-price">
-                <span class="error" id="i_p_error"></span>
-            </div>
-            <div class="form-group">
-                <label for="item-category">Category</label>
-                <select class="custom-select" id="item-category">
+        </nav>
+        <div class="container-fluid main">
+            <div class="additem_div col-10">
+                <h1 style="text-align: center;">Add Item</h1>
+                <div class="hidden" role="alert" id="alert3">
+                </div>
+                <div class="form-group">
+                    <label for="item-name">Item Name</label>
+                    <input type="text" class="form-control" id="item-name" aria-describedby="emailHelp">
+                    <span class="error" id="i_n_error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="item-price">Item Price</label>
+                    <input type="text" class="form-control" id="item-price">
+                    <span class="error" id="i_p_error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="item-category">Category</label>
+                    <select class="custom-select" id="item-category">
                         <option selected disabled value="">Open this menu to select category</option>
                         <option value="Chinese">Chinese</option>
                         <option value="Italian">Italian</option>
                         <option value="Fast Food">Fast Food</option>
                     </select>
-                <span class="error" id="i_c_error"></span>
-            </div>
-            <div class="form-group">
-                <label for="item-image">Item Image</label>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="item-image">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <span class="error" id="i_c_error"></span>
                 </div>
-                <span class="error" id="i_img_error"></span>
-            </div>
-            <div class="form-group">
-                <label for="item-delivery-type">Item Delivery Type</label>
-                <select class="custom-select" id="item-delivery-type">
+                <div class="form-group">
+                    <label for="item-image">Item Image</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="item-image">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    <span class="error" id="i_img_error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="item-delivery-type">Item Delivery Type</label>
+                    <select class="custom-select" id="item-delivery-type">
                         <option selected disabled value="">Open this menu to select delivery type</option>
                         <option value="Free">Free</option>
                         <option value="Paid">Paid</option>
                     </select>
-                <span class="error" id="i_delivery_error"></span>
-            </div>
-            <div>
-                <button class="btn btn-primary" onclick="addItem()">Add Item</button>
+                    <span class="error" id="i_delivery_error"></span>
+                </div>
+                <div>
+                    <button class="btn btn-primary" onclick="addItem()">Add Item</button>
+                </div>
             </div>
         </div>
     </div>

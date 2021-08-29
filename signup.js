@@ -1,7 +1,3 @@
-let restData = localStorage.getItem('allrest');
-let allrest = JSON.parse(restData);
-let custData = localStorage.getItem('allCusts');
-let allCusts = JSON.parse(restData);
 let alert1 = document.getElementById('alert1');
 let alert2 = document.getElementById('alert2');
 let resError = document.getElementById('res_error');
@@ -15,16 +11,6 @@ let cPError = document.getElementById('cust_p_error');
 let cPhoneError = document.getElementById('cust_phone_error');
 let cCityError = document.getElementById('cust_city_error');
 let cConError = document.getElementById('cust_con_error');
-let getData = () => {
-    firebase.database().ref('restaurants').once('value', (data) => {
-        allrest = data.val();
-        localStorage.setItem('allrest', JSON.stringify(allrest));
-    })
-    firebase.database().ref('customers').once('value', (data) => {
-        allCusts = data.val();
-        localStorage.setItem('allCusts', JSON.stringify(allCusts));
-    })
-}
 let restValidate = (name, email, password, city, country) => {
     let valid = true;
     resError.innerHTML = "";
@@ -198,3 +184,26 @@ let custSignUp = () => {
             });
     }
 }
+
+function authStateListener() {
+    // [START auth_state_listener]
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            userId = user.uid;
+            let cData = localStorage.getItem("Current User");
+            let cUser = JSON.parse(cData);
+            let type = cUser.Type;
+            if (type == "Customer") {
+                window.location.href = "./customer-panel.html";
+            } else {
+                window.location.href = "./restaurant-panel.html";
+            }
+        } else {
+            window.location.href = "./index.html";
+        }
+    });
+    // [END auth_state_listener]
+}
+authStateListener();

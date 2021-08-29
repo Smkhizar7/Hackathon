@@ -1,4 +1,3 @@
-let allrest, allCusts;
 let alert1 = document.getElementById('alert1');
 let eError = document.getElementById('e_error');
 let pError = document.getElementById('p_error');
@@ -12,19 +11,7 @@ let loginCheck = () => {
         } else {
             window.location.href = "./customer-panel.html";
         }
-    } else {
-        getData();
     }
-}
-let getData = () => {
-    firebase.database().ref('restaurants').once('value', (data) => {
-        allrest = data.val();
-        localStorage.setItem('allrest', JSON.stringify(allrest));
-    })
-    firebase.database().ref('customers').once('value', (data) => {
-        allCusts = data.val();
-        localStorage.setItem('allCusts', JSON.stringify(allCusts));
-    })
 }
 let validate = (radio, email, password) => {
     let valid = true,
@@ -87,15 +74,15 @@ let login = () => {
                 .then((userCredential) => {
                     let user = userCredential.user;
                     let userId = user.uid;
-                    let data = localStorage.getItem('allrest');
-                    let obj = JSON.parse(data);
-                    let currentUser = JSON.stringify(obj[userId]);
-                    localStorage.setItem("Current User", currentUser);
-                    alert1.setAttribute("class", "alert alert-success");
-                    alert1.innerHTML = "Sign In Successfully!";
-                    setTimeout(() => {
-                        window.location.href = "./restaurant-panel.html";
-                    }, 2000);
+                    firebase.database().ref("restaurants").child(userId).once("value", (data) => {
+                        let currentUser = data.val();
+                        localStorage.setItem("Current User", JSON.stringify(currentUser));
+                        alert1.setAttribute("class", "alert alert-success");
+                        alert1.innerHTML = "Sign In Successfully!";
+                        setTimeout(() => {
+                            window.location.href = "./restaurant-panel.html";
+                        }, 1000);
+                    })
                 })
                 .catch((error) => {
                     let errorCode = error.code;
@@ -109,15 +96,16 @@ let login = () => {
                 .then((userCredential) => {
                     let user = userCredential.user;
                     let userId = user.uid;
-                    let data = localStorage.getItem('allCusts');
-                    let obj = JSON.parse(data);
-                    let currentUser = JSON.stringify(obj[userId]);
-                    localStorage.setItem("Current User", currentUser);
-                    alert1.setAttribute("class", "alert alert-success");
-                    alert1.innerHTML = "Sign In Successfully!";
-                    setTimeout(() => {
-                        window.location.href = "./customer-panel.html";
-                    }, 2000);
+                    firebase.database().ref("customers").child(userId).once("value", (data) => {
+                        let currentUser = data.val();
+                        let currentData = JSON.stringify(currentUser);
+                        localStorage.setItem("Current User", currentData);
+                        alert1.setAttribute("class", "alert alert-success");
+                        alert1.innerHTML = "Sign In Successfully!";
+                        setTimeout(() => {
+                            window.location.href = "./customer-panel.html";
+                        }, 1000);
+                    })
                 })
                 .catch((error) => {
                     let errorCode = error.code;
@@ -128,3 +116,26 @@ let login = () => {
         }
     }
 }
+
+function authStateListener() {
+    // [START auth_state_listener]
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            userId = user.uid;
+            let cData = localStorage.getItem("Current User");
+            let cUser = JSON.parse(cData);
+            let type = cUser.Type;
+            if (type == "Customer") {
+                window.location.href = "./customer-panel.html";
+            } else {
+                window.location.href = "./restaurant-panel.html";
+            }
+        } else {
+
+        }
+    });
+    // [END auth_state_listener]
+}
+authStateListener();

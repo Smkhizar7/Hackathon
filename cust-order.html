@@ -28,67 +28,34 @@
 </head>
 
 <body onload="order()">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="customer-panel.html"><i class="fas fa-utensils"></i> Food Mart</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container-fluid body-div">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="customer-panel.html"><i class="fas fa-utensils"></i> Food Mart</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./customer-panel.html">Dashboard<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./cust-order.html">Orders</a>
-                </li>
-            </ul>
-            <div class="form-inline my-2 my-lg-0 name">
-                <span id="uName"></span>
-                <a class="nav-link" onclick="logout()">Logout
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./customer-panel.html"><i class="fas fa-chart-pie"></i> &nbsp; Dashboard<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./cust-order.html"><i class="fas fa-parachute-box"></i> &nbsp; Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cart.html"><i class="fas fa-shopping-cart"></i> &nbsp; Cart</a>
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0 name">
+                    <span id="uName"></span>
+                    <a class="nav-link" onclick="signOut()">Logout
                     <i class="fas fa-sign-out-alt"></i>
                 </a>
+                </div>
             </div>
+        </nav>
+        <div class="container-fluid" id="cust-orders">
         </div>
-    </nav>
-    <div class="container-fluid" id="cust-orders">
-        <!-- <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table> -->
-        <!-- <div class="card" style="width: 18rem;">
-            <h5 class="card-title" style="text-align: center;">Item Name</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Price</li>
-                <li class="list-group-item">Category</li>
-                <li class="list-group-item">Order status</li>
-            </ul>
-        </div> -->
     </div>
     <script src="./customer.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
